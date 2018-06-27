@@ -12,9 +12,7 @@ class Membufc < Formula
   def install
     ENV["GOPATH"] = buildpath
 
-    bin_path = buildpath/"src/github.com/orbs-network/membuffers/go/membufc"
-    # Copy all files from their current location (GOPATH root)
-    # to $GOPATH/src/github.com/orbs-network/membuffers/go/membufc
+    bin_path = buildpath/"src/github.com/orbs-network/membuffers"
     bin_path.install Dir["*"]
     
     cd bin_path do
@@ -22,7 +20,7 @@ class Membufc < Formula
       # global variable
       #system "go", "get", "-u", "github.com/gobuffalo/packr/..."
       #system buildpath/"bin/packr", "build", "-o", bin/"membufc", "."
-      system "go", "build", "-o", bin/"membufc", "."
+      system "go", "build", "-o", bin/"membufc", "./go/membufc"
     end
   end
 
