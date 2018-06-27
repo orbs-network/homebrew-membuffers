@@ -28,7 +28,6 @@ class Membufc < Formula
     cd bin_path do
       # Install the compiled binary into Homebrew's `bin` - a pre-existing
       # global variable
-      system "go", "get", "-u", "github.com/gobuffalo/packr/..."
       system "packr", "build", "-o", bin/"membufc", "."
     end
   end
