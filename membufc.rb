@@ -25,7 +25,7 @@ class Membufc < Formula
     bin_path.install Dir["*"]
     
     # Stage dependencies. This requires the "require language/go" line above
-    Language::Go.stage_deps resources, buildpath/"src"
+    Language::go.stage_deps resources, buildpath/"src"
 
     cd bin_path do
       # Install the compiled binary into Homebrew's `bin` - a pre-existing
