@@ -1,5 +1,3 @@
-require "language/Go"
-
 class Membufc < Formula
   desc "Compiler for .proto schemas for MemBuffers serialization library"
   homepage "https://github.com/orbs-network/membuffers"
@@ -8,11 +6,6 @@ class Membufc < Formula
   url "https://github.com/orbs-network/membuffers/archive/0.0.1.tar.gz"
   sha256 "b854e29c0f0f02eb696c4918569450c64aae70aae3b350b39f3873e38df170b1"
   head "https://github.com/orbs-network/membuffers"
-
-  go_resource "github.com/gobuffalo/packr" do
-    url "https://github.com/gobuffalo/packr.git",
-        :revision => "ee34b116572778801ca4a9f6355eda4577cabce8"
-  end
   
   depends_on "go" => :build
 
@@ -24,12 +17,10 @@ class Membufc < Formula
     # to $GOPATH/src/github.com/orbs-network/membuffers/go/membufc
     bin_path.install Dir["*"]
     
-    # Stage dependencies. This requires the "require language/go" line above
-    Language::Go.stage_deps resources, buildpath/"src"
-
     cd bin_path do
       # Install the compiled binary into Homebrew's `bin` - a pre-existing
       # global variable
+      system "go", "get", "-u", "github.com/gobuffalo/packr/..."
       system "packr", "build", "-o", bin/"membufc", "."
     end
   end
