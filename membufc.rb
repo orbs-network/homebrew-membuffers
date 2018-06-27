@@ -1,3 +1,5 @@
+require "language/go"
+
 class Membufc < Formula
   desc "Compiler for .proto schemas for MemBuffers serialization library"
   homepage "https://github.com/orbs-network/membuffers"
