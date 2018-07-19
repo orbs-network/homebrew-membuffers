@@ -4,7 +4,7 @@ class Membufc < Formula
 
   # Source code archive. Each tagged release will have one
   url "https://github.com/orbs-network/membuffers/archive/0.0.16.tar.gz"
-  sha256 "c42085253ddbf9e4009394b6fbd3b332206457b8898c93b7c66a5571d457578a"
+  sha256 "66836c0c5abca689072931664d44beb6c3779b0e977f7eede06a6daa2a589fba"
   head "https://github.com/orbs-network/membuffers"
   
   depends_on "go" => :build
