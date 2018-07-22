@@ -3,8 +3,8 @@ class Membufc < Formula
   homepage "https://github.com/orbs-network/membuffers"
 
   # Source code archive. Each tagged release will have one
-  url "https://github.com/orbs-network/membuffers/archive/0.0.16.tar.gz"
-  sha256 "66836c0c5abca689072931664d44beb6c3779b0e977f7eede06a6daa2a589fba"
+  url "https://github.com/orbs-network/membuffers/archive/0.0.17.tar.gz"
+  sha256 "627abf109a7d485e57aa5846e4574fcada1323ef45a7dca1c79328a1438d49dd"
   head "https://github.com/orbs-network/membuffers"
   
   depends_on "go" => :build
@@ -29,6 +29,6 @@ class Membufc < Formula
   test do
     # "2>&1" redirects standard error to stdout. The "2" at the end means "the
     # exit code should be 2".
-    assert_match "membufc 0.0.16", shell_output("#{bin}/membufc --version 2>&1", 2)
+    assert_match "membufc 0.0.17", shell_output("#{bin}/membufc --version 2>&1", 2)
   end
 end
